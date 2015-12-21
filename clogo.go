@@ -2,6 +2,58 @@
 //
 // Leverages the environment variable "DEBUG" to conditionally output statements.
 //
+// clogo is silent by default...
+//
+// Code:
+// 	log := NewLog("package")
+// 	log.Println("This is a log")
+// 	fmt.Println("<end>")
+// Output:
+//  $ go run test.go
+//  <end>
+//
+// ...but can easily be configured to show all registered loggers...
+//
+// Code:
+//	log := NewLog("package")
+//
+//	log.Println("This is a log")
+//	fmt.Println("<end>")
+// Output:
+//  $ DEBUG=* go run test.go
+//  package: This is a log!
+//  <end>
+//
+// ...or only show logs from a specific namespace...
+//
+// Code:
+//  foolog := NewLog("foo")
+//  barlog := NewLog("bar")
+//  foolog.Println("This is a log")
+//  barlog.Println("This is a log")
+//  fmt.Println("<end>")
+// Output:
+//  $ DEBUG=foo go run test.go
+//  foo: This is a log
+//  <end>
+//
+// ...and even match namespaces with wildcards.
+//
+// Code:
+// 	barlog := NewLog("foo:bar")
+// 	bazlog := NewLog("foo:baz")
+// 	quxlog := NewLog("qux")
+//
+// 	barlog.Println("This is a log")
+// 	bazlog.Println("This is a log")
+// 	quxlog.Println("This is a log")
+//
+// 	fmt.Println("<end>")
+// Output:
+//  $ DEBUG=foo:* go run test.go
+//  foo:bar This is a log
+//  foo:baz This is a log
+//  <end>
 package clogo
 
 import deflog "log"
