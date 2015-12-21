@@ -18,7 +18,7 @@ package main
 import "github.com/32bitkid/clogo"
 import "fmt"
 
-var logger = clogo.newLog("prefix")
+var logger = clogo.NewLog("prefix")
 
 func main() {
     logger.Println("This is a log")
