@@ -1,17 +1,17 @@
-# clogo
+# clog
 
 Simple conditional logging for go.
 
-See the [documentation](https://godoc.org/github.com/32bitkid/clogo).
+See the [documentation](https://godoc.org/github.com/32bitkid/clog).
 
 ## Installation
 
 ```bash
-$ go get github.com/32bitkid/clogo
+$ go get github.com/32bitkid/clog
 ```
 
 ## Examples
-clogo is silent by default...
+clog is silent by default...
 
 ```go
 log := NewLog("package")

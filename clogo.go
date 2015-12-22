@@ -2,7 +2,7 @@
 //
 // Leverages the environment variable "DEBUG" to conditionally output statements.
 //
-// clogo is silent by default...
+// clog is silent by default...
 //
 // Code:
 // 	log := NewLog("package")
@@ -54,7 +54,7 @@
 //  foo:bar This is a log
 //  foo:baz This is a log
 //  <end>
-package clogo
+package clog
 
 import deflog "log"
 import "io"
