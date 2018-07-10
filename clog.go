@@ -56,11 +56,13 @@
 //  <end>
 package clog
 
-import deflog "log"
-import "io"
-import "io/ioutil"
-import "os"
-import "strings"
+import (
+	"io"
+	"io/ioutil"
+	deflog "log"
+	"os"
+	"strings"
+)
 
 var namespaces = strings.Split(os.Getenv("DEBUG"), ",")
 
